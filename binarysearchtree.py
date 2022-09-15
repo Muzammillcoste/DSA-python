@@ -38,7 +38,18 @@ class BinarySearchTree:
             return []
         return (BinarySearchTree.Inorder_Traversal(self.left)+[self.data]+
                 BinarySearchTree.Inorder_Traversal(self.right))       
+        
+    def Preorder_Traversal(self):
+        if self is None:
+            return []
+        return ([self.data]+BinarySearchTree.Preorder_Traversal(self.left)+
+                BinarySearchTree.Preorder_Traversal(self.right))
 
+    def Postorder_Traversal(self):
+        if self is None:
+            return []
+        return (BinarySearchTree.Postorder_Traversal(self.left)+
+                BinarySearchTree.Postorder_Traversal(self.right)+[self.data])
                 
                 
 def buildtree(elements):
@@ -56,3 +67,5 @@ tree=buildtree(tree_list)
 tree.add_child(5)
 print(tree.Search_element(5))
 print(tree.Inorder_Traversal())
+print(tree.Preorder_Traversal())
+print(tree.Postorder_Traversal())
