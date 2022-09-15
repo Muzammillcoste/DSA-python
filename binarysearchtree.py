@@ -19,7 +19,20 @@ class BinarySearchTree:
             else:
                 self.right=BinarySearchTree(child)
                 
-    
+    def Search_element(self,element):
+        if element==self.data:
+            return True
+        elif element<self.data:
+            if self.left:
+                return self.left.Search_element(element)
+            else:
+                return False
+        else:
+            if self.right:
+               return self.right.Search_element(element)
+            else:
+               return False
+                
                 
 def buildtree(elements):
     if len(elements)==0:
@@ -33,3 +46,5 @@ def buildtree(elements):
 
 tree_list=[10,4,6,7,9,17,18,0,3,-1,3]
 tree=buildtree(tree_list)
+tree.add_child(5)
+print(tree.Search_element(5))
