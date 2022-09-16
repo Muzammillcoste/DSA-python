@@ -51,6 +51,13 @@ class Tree:
             return self.data
         return self.right.max_node()
     
+    def To_tuple(self):
+        if self is None:
+            return None
+        elif self.left is None and self.right is None:
+            return self.data
+        return Tree.Preorder_traversal(self)
+    
 tree_tuple=((1,3,None), 2, ((None, 3, 4), 5, (6, 7, 8)))
 tree = Tree.BuildTree(tree_tuple)
 print(tree.Inorder_traversal())
@@ -60,3 +67,4 @@ print(tree.Height())
 print(tree.no_of_node())
 print(tree.min_node())
 print(tree.max_node())
+print(tree.To_tuple())
