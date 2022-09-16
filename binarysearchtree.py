@@ -50,8 +50,17 @@ class BinarySearchTree:
             return []
         return (BinarySearchTree.Postorder_Traversal(self.left)+
                 BinarySearchTree.Postorder_Traversal(self.right)+[self.data])
-                
-                
+    
+    def Height(self):
+        if self is None:
+            return 0
+        return 1+max(BinarySearchTree.Height(self.left),BinarySearchTree.Height(self.right))
+    
+    def No_of_Nodes(self):
+        if self is None:
+            return 0
+        return 1+BinarySearchTree.No_of_Nodes(self.left)+BinarySearchTree.No_of_Nodes(self.right)
+                                
 def buildtree(elements):
     if len(elements)==0:
         raise Exception('list is empty')
@@ -69,3 +78,5 @@ print(tree.Search_element(5))
 print(tree.Inorder_Traversal())
 print(tree.Preorder_Traversal())
 print(tree.Postorder_Traversal())
+print(tree.Height())
+print(tree.No_of_Nodes())
