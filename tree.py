@@ -70,6 +70,21 @@ class Tree:
             return self.data
         return Tree.Preorder_traversal(self)
     
+    def search_element(self,element):
+        if self.data == element:
+            return True
+        elif self.data>element:
+            # search to left
+            if self.left:
+                return True
+            else:
+                return f'Tree does not have element {element}'
+        else:
+            # search to right
+            if self.right:
+                return True
+            else:
+                return f'Tree does not have element {element}'
     
 tree_tuple=((1,3,None), 2, ((None, 3, 4), 5, (6, 7, 8)))
 tree = Tree.BuildTree(tree_tuple)
@@ -82,3 +97,4 @@ print(tree.min_node())
 print(tree.max_node())
 print(tree.To_tuple())
 print(tree.find_sum())
+print(tree.search_element(3))
