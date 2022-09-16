@@ -60,8 +60,14 @@ class BinarySearchTree:
         if self is None:
             return 0
         return 1+BinarySearchTree.No_of_Nodes(self.left)+BinarySearchTree.No_of_Nodes(self.right)
+    
+    def Mini_depth(self):
+        if self is None:
+            return 0
+        return 1+min(BinarySearchTree.Mini_depth(self.left),BinarySearchTree.Mini_depth(self.right))
                                 
 def buildtree(elements):
+    print('BinarySearchTree',elements)
     if len(elements)==0:
         raise Exception('list is empty')
     
@@ -71,12 +77,12 @@ def buildtree(elements):
         
     return root
 
-tree_list=[10,4,6,7,9,17,18,0,3,-1,3]
+tree_list=[3,9,20,15,7]
 tree=buildtree(tree_list)
-tree.add_child(5)
-print(tree.Search_element(5))
+
 print(tree.Inorder_Traversal())
 print(tree.Preorder_Traversal())
 print(tree.Postorder_Traversal())
 print(tree.Height())
 print(tree.No_of_Nodes())
+print(tree.Mini_depth())
