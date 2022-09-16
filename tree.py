@@ -85,6 +85,22 @@ class Tree:
                 return True
             else:
                 return f'Tree does not have element {element}'
+
+    def insert(self, data):
+
+        if data == self.data:
+            return # node already exist
+
+        elif data < self.data:
+            if self.left:
+                self.left.insert(data)
+            else:
+                self.left = Tree(data)
+        else:
+            if self.right:
+                self.right.insert(data)
+            else:
+                self.right = Tree(data)
     
 tree_tuple=((1,3,None), 2, ((None, 3, 4), 5, (6, 7, 8)))
 tree = Tree.BuildTree(tree_tuple)
@@ -98,3 +114,4 @@ print(tree.max_node())
 print(tree.To_tuple())
 print(tree.find_sum())
 print(tree.search_element(3))
+tree.insert(10)
