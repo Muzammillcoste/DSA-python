@@ -83,6 +83,4 @@ tree=buildtree(tree_list)
 print(tree.Inorder_Traversal())
 print(tree.Preorder_Traversal())
 print(tree.Postorder_Traversal())
-print(tree.Height())
-print(tree.No_of_Nodes())
-print(tree.Mini_depth())
+
