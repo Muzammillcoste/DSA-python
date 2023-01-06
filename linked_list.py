@@ -90,8 +90,7 @@ ll.append_left(1)
 ll.append(3)
 ll.insert_list(['m','n'])
 ll.append_list([1,2])
-ll.insert(1,'muz')
 ll.print()
-    
+ll.insert(1,'muz')
     
             
